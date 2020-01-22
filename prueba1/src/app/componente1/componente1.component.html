@@ -1,0 +1,36 @@
+<p *ngIf="22==22">Formulario:</p>
+
+<form>
+
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="datos.nombre">
+    <br><br>
+    <label for="edad">Apellidos</label>
+    <input type="text" id="apellidos" name="apellidos" [(ngModel)]="datos.apellidos">
+    <br><br>
+    <label for="estatura">Estatura</label>
+    <input type="text" id="estatura" name="estatura" [(ngModel)]="datos.estatura">
+    <br><br>
+    <label for="nacimiento">Fecha de nacimiento</label>
+    <input type="text" id="fnacimiento" name="fnacimiento" [(ngModel)]="datos.fnacimiento">
+    <br><br>
+    <button (click)="enviar()">enviar</button>
+    <button type="reset">Limpiar</button>
+
+</form>
+
+<p>Los datos del formulario son:</p>
+
+
+<p>Ahora ponemos un Select:</p>
+
+<select [(ngModel)]="opSel" (ngModelChange)="selccion($event)">
+    <option *ngFor="let op of opciones"[ngValue]="op">
+        {{op.nombre}}
+    </option>
+</select>
+
+<div *ngIf="opSel">
+    <p>Has selecionado: {{opSel.nombre}}. Valor: {{opSel.id}}</p>
+</div>
+<pre>{{datos | json }}</pre>

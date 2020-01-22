@@ -1,0 +1,36 @@
+<h3>Ejemplo de llamada a la API de STAR WARS</h3>
+	<br/>
+
+
+		
+		<table id="personajes" class="estilo_Tabla_1">
+			<caption>Personajes STAR WARS</caption>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Altura</th>
+          <th>Peso</th>
+		  <th>Nacimiento</th>
+		  <th>Género</th>
+		  <th>Homeworld</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpoPersonajes">
+     <tr *ngFor="let datos of listaPer">
+		 <td>{{datos.name}}</td>
+		 <td>{{datos.height}}</td>
+		 <td>{{datos.mass}}</td>
+		 <td>{{datos.birth_year}}</td>
+		 <td>{{datos.gender}}</td>
+		 <td>{{datos.homeworld}}</td>
+	 </tr>
+      </tbody>
+    </table>
+		<div>
+		<button id="btAnterior" (click)="paginacion(datos.previous)">Anterior</button>
+		<button id="btSiguiente" (click)="paginacion(datos.next)">Siguiente</button>
+		</div>
+	
+	
+	<br/>
+	<div id="datosPlaneta">Datos del planeta:</div>
