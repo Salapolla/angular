@@ -18,5 +18,20 @@ export class AjaxServicioService {
     });
     return this.http.post<Persona[]>(this.url,parametro);
   }
- 
+ eliminar(id){
+  let parametro= JSON.stringify({
+    servicio:"borrar",
+    id:id
+  });
+  return this.http.post<Persona[]>(this.url,parametro);
+ }
+ anadir(dni,nombre,apellidos){
+  let parametro= JSON.stringify({
+    servicio:"insertar",
+    dni:dni,
+    nombre:nombre,
+    apellidos:apellidos
+  });
+  return this.http.post<Persona[]>(this.url,parametro);
+ }
 }

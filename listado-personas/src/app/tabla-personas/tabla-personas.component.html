@@ -1,42 +1,28 @@
+ 
+ <div  *ngIf="pulsar">
+ <h1>Registro de Usuarios</h1>
 
-<body>
-    <h1>Registro de Usuarios</h1>
-    <form>
-      <label for="dni">DNI:</label>
-      <input type="text" id="dni" name="dni" value="27473339T" />
-      <span id="infoDNI"> </span>
-      <br />
-      <label for="nombre">NOMBRE:</label>
-      <input type="text" id="nombre" name="nombre" value="Marco Elio" />
-      <br />
-      <label for="apellidos">APELLIDOS:</label>
-      <input type="text" id="apellidos" name="apellidos" value="García Gomariz" />
       <br />
   
-      <br />
-  
-      <table id="tabla_personas" border="1">
-        <tr>
-          <th>ID</th>
-          <th>DNI</th>
-          <th>NOMBRE</th>
-          <th>APELLIDOS</th>
-          <th>OPCIONES</th>
+      <table class="container border border-primary rounded-lg" id="tabla_personas">
+        <tr class="row">
+          <th class="col-2">ID</th>
+          <th class="col-2">DNI</th>
+          <th class="col-2">NOMBRE</th>
+          <th class="col-2">APELLIDOS</th>
+          <th class="col-4">OPCIONES</th>
         </tr>
   
         <tbody id="filas_tabla">
-          <tr *ngFor="let datos of tablaPer">
-            <td>{{datos.id}}</td>
-            <td>{{datos.dni}}</td>
-            <td>{{datos.nombre}}</td>
-            <td>{{datos.apellidos}}</td>
+          <tr class="row" *ngFor="let datos of tablaPer">
+            <td class="col-2">{{datos.id}}</td>
+            <td class="col-2">{{datos.dni}}</td>
+            <td class="col-2">{{datos.nombre}}</td>
+            <td class="col-2">{{datos.apellidos}}</td>
+            <td class="col-4"><input type="button" (click)="eliminar(datos.id)" value="Eliminar"></td>
           </tr>
         </tbody>
       </table>
-  
-      <br />
-      <br />
-      <input type="button" value="AÑADIR" id="btAnade" />
-    </form>
-  
-  </body>
+      <br>
+      <button class="btn btn-primary" routerLink="insertar" (click)="pulsado()">Añadir</button>
+      </div>
