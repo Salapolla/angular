@@ -6,21 +6,18 @@ import {AjaxServicioService}from '../ajax-servicio.service';
   styleUrls: ['./tabla-personas.component.css']
 })
 export class TablaPersonasComponent implements OnInit {
-  private tablaPer:Object[];
+  private tablaPer:any;
   public datos:any=null;
 
   constructor(private serviciopAjax: AjaxServicioService) {
     this.serviciopAjax.listar().subscribe(datacos => {
-      this.asignarDatos(datacos);
+      this.tablaPer=datacos;
       console.log(datacos);
     })
   }
 
 
-  private asignarDatos(datos: Object) {
-    this.datos = datos;
-    this.tablaPer=this.datos.listar;
-  }
+  
   ngOnInit() {
   }
 

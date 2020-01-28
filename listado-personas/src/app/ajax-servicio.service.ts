@@ -1,27 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import { Persona} from './persona';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AjaxServicioService {
-
+ 
+  private url:string='http://localhost/angular/servidor.php';
+  
   constructor(private http:HttpClient) {}
+  
   //Generamos las funciones que nos serviran para manipular nuestras entidades
   listar() {
-    return this.http.get('http://localhost/angular/servidor.php');
+    let parametro= JSON.stringify({
+      servicio:"listar"
+    });
+    return this.http.post<Persona[]>(this.url,parametro);
   }
-  detallar(id: number) {
-    return this.http.get('http://localhost/angular/servidor.php?opcion=3' + id);
-  }
-  guardar(item: Object) {
-    return this.http.post('http://localhost/angular/servidor.php?opcion=3', item);
-  } 
-  modificar(item: Object) {
-    return this.http.post('http://localhost/angular/servidor.php?opcion=3', item);
-  }
-  eliminar(id: number) {
-    throw new Error("Method not implemented.");
-  }
+ 
 }
