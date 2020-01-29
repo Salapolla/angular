@@ -1,14 +1,14 @@
-<form *ngIf="pulsado">
+<form>
     <label for="dni">DNI:</label>
-    <input type="text" id="dni" [(ngModel)]="persona.dni" name="dni" placeholder="27473339T" >
+    <input type="text" id="dni" [(ngModel)]="persona.dni" name="dni" placeholder="27473339T" value="{{persona.dni}}" >
     <span id="infoDNI"> </span>
     <br />
     <label for="nombre">NOMBRE:</label>
-    <input type="text"  [(ngModel)]="persona.nombre" id="nombre" name="nombre" placeholder="Marco Elio" />
+    <input type="text"  [(ngModel)]="persona.nombre" id="nombre" name="nombre" placeholder="Marco Elio"  value="{{persona.nombre}}" />
     <br />
     <label for="apellidos">APELLIDOS:</label>
-    <input type="text" [(ngModel)]="persona.apellidos" id="apellidos" name="apellidos" placeholder="García Gomariz" />
+    <input type="text" [(ngModel)]="persona.apellidos" id="apellidos" name="apellidos" placeholder="García Gomariz"  value="{{persona.apellidos}}" />
     <br />
-    <input class="btn btn-secondary" (click)="aceptar(persona.dni,persona.nombre,persona.apellidos)" type="button" value="ACEPTAR" />
-    <input class="btn btn-secondary" routerLink="listado" (click)="pulsar()" type="button" value="CANCELAR" />
+    <input class="btn btn-secondary"routerLink="" (click)="aceptar(persona.dni,persona.nombre,persona.apellidos)" type="button" value="ACEPTAR" />
+    <input class="btn btn-secondary" routerLink="" type="button" value="CANCELAR" />
 </form>

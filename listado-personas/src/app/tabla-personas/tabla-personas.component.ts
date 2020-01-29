@@ -8,7 +8,6 @@ import {AjaxServicioService}from '../ajax-servicio.service';
 export class TablaPersonasComponent implements OnInit {
   private tablaPer:any;
   public datos:any=null;
-  public pulsar:boolean=true;
 
   constructor(private serviciopAjax: AjaxServicioService) {
     this.serviciopAjax.listar().subscribe(datacos => {
@@ -20,9 +19,6 @@ export class TablaPersonasComponent implements OnInit {
 eliminar(id){
   this.serviciopAjax.eliminar(id).subscribe(datacos => {
     this.tablaPer=datacos;});
-}
-pulsado(){
-  this.pulsar=false;
 }
   ngOnInit() {
   }

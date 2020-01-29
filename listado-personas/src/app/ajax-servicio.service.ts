@@ -34,4 +34,21 @@ export class AjaxServicioService {
   });
   return this.http.post<Persona[]>(this.url,parametro);
  }
+ modificar(id,dni,nombre,apellidos){
+  let parametro= JSON.stringify({
+    servicio:"modificar",
+    id:id,
+    dni:dni,
+    nombre:nombre,
+    apellidos:apellidos
+  });
+  return this.http.post<Persona[]>(this.url,parametro);
+ }
+ selPersona(id){
+  let parametro= JSON.stringify({
+    servicio:"selPersonaID",
+    id:id
+  });
+  return this.http.post<Persona[]>(this.url,parametro);
+ }
 }

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms'
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { TablaPersonasComponent } from './tabla-personas/tabla-personas.component';
@@ -17,9 +17,10 @@ import { FormularioPersonaComponent } from './formulario-persona/formulario-pers
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot([
-      {path: 'listado', component: TablaPersonasComponent},
-      {path: 'insertar', component: FormularioPersonaComponent}
+      {path: '', component: TablaPersonasComponent},
+      {path: 'insertar/:id', component: FormularioPersonaComponent}
     ])
   ],
   providers: [],

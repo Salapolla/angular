@@ -1,28 +1,28 @@
  
- <div  *ngIf="pulsar">
  <h1>Registro de Usuarios</h1>
 
       <br />
   
-      <table class="container border border-primary rounded-lg" id="tabla_personas">
+      <table class="table text-center" id="tabla_personas">
         <tr class="row">
-          <th class="col-2">ID</th>
-          <th class="col-2">DNI</th>
+          <th class="col-2 ">ID</th>
+          <th class="col-2 ">DNI</th>
           <th class="col-2">NOMBRE</th>
           <th class="col-2">APELLIDOS</th>
           <th class="col-4">OPCIONES</th>
         </tr>
   
         <tbody id="filas_tabla">
-          <tr class="row" *ngFor="let datos of tablaPer">
-            <td class="col-2">{{datos.id}}</td>
+          <tr class="row " *ngFor="let datos of tablaPer">
+            <td class="col-2 center">{{datos.id}}</td>
             <td class="col-2">{{datos.dni}}</td>
             <td class="col-2">{{datos.nombre}}</td>
             <td class="col-2">{{datos.apellidos}}</td>
-            <td class="col-4"><input type="button" (click)="eliminar(datos.id)" value="Eliminar"></td>
+            <td class="col-2"><input class="btn btn-outline-info" type="button" routerLink="insertar/{{datos.id}}" value="Modificar"></td>
+            <td class="col-2"><input class="btn btn-outline-danger" type="button" (click)="eliminar(datos.id)" value="Eliminar"></td>
           </tr>
         </tbody>
       </table>
       <br>
-      <button class="btn btn-primary" routerLink="insertar" (click)="pulsado()">Añadir</button>
-      </div>
+      <button class="btn btn-primary" routerLink="insertar/-1">AÑADIR</button>
+  
