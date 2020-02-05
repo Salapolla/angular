@@ -3,22 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { InicioComponent } from './componentes/inicio/inicio.component';
-import { OwnersComponent } from './componentes/owners/owners.component';
-import { VetsComponent } from './componentes/vets/vets.component';
+import { PrincipalComponent } from './principal/principal.component';
+import { ListaDetalleComponent } from './lista-detalle/lista-detalle.component';
 import {HttpClientModule} from '@angular/common/http';
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
     AppComponent,
-    InicioComponent,
-    OwnersComponent,
-    VetsComponent
+    PrincipalComponent,
+    ListaDetalleComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

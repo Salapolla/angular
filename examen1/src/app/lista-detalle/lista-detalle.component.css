@@ -1,0 +1,7 @@
+table,th, tr, td{
+    border: .5px solid black;
+    border-collapse: collapse;
+}
+h3 span{
+    color: red;
+}

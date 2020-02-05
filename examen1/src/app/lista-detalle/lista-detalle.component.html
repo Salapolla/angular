@@ -1,0 +1,53 @@
+<h1>Gestión de Facturas</h1>
+<h3>Detalles de la factura:<span> {{numeroFac}}</span></h3>
+<table id="tabla_personas">
+    <tr>
+        <th>ID</th>
+        <th>CANTIDAD</th>
+        <th>CONCEPTO</th>
+        <th>PRECIO</th>
+        <th>Tipo IVA</th>
+        <th>IVA</th>
+        <th>TOTAL</th>
+        <th>Editar</th>
+        <th>Borrar</th>
+    </tr>
+
+    <tbody id="filas_tabla">
+        <tr *ngFor="let datos of datosFac">
+            <td>{{datos.id}}</td>
+            <td>{{datos.cantidad}}</td>
+            <td>{{datos.concepto}}</td>
+            <td>{{datos.precio}}</td>
+            <td>{{datos.tipo_iva}}</td>
+            <td>{{iva}}</td>
+            <td>{{total}}</td>
+            <td><input type="button" (click)="modificar(datos.cantidad, datos.concepto, datos.precio, datos.tipo_iva, datos.id)" value="Editar"></td>
+            <td><input type="button" (click)="borrar(datos.id)" value="Borrar"></td>
+        </tr>
+        <tr>
+            <td>TOTALES:</td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<input type="button" routerLink="" value="Volver">
+<input type="button" (click)="validar()"  value="Nuevo Detalle">
+
+
+    <form *ngIf="valido==true">
+        <label for="cantidad">Cantidad:</label>
+        <input type="text" id="cantidad" [(ngModel)]="detalles.cantidad" name="cantidad" value="{{detalles.cantidad}}" >
+        <br />
+        <label for="concepto">Concepto:</label>
+        <input type="text"  [(ngModel)]="detalles.concepto" id="concepto" name="concepto" value="{{detalles.concepto}}" />
+        <br />
+        <label for="precio">Precio:</label>
+        <input type="text" [(ngModel)]="detalles.precio" id="precio" name="precio" value="{{detalles.precio}}" />
+        <br />
+        <label for="tipo_iva">Tipo IVA:</label>
+        <input type="text" [(ngModel)]="detalles.tipo_iva" id="tipo_iva" name="tipo_iva" value="{{detalles.tipo_iva}}" />
+        <br />
+        <input (click)="anadir(detalles.cantidad, detalles.concepto, detalles.precio, detalles.tipo_iva)" type="button" value="{{textoBoton}}" />
+    </form>

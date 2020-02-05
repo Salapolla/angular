@@ -1,0 +1,19 @@
+<h1>Registro de Facturas</h1>
+<h3>Consulta de Facturas</h3>
+<table id="tabla_personas">
+    <tr>
+        <th>ID</th>
+        <th>NUMERO</th>
+        <th>Cliente</th>
+        <th>FECHA</th>
+    </tr>
+
+    <tbody id="filas_tabla">
+        <tr *ngFor="let datos of tablaFac">
+            <td>{{datos.id}}</td>
+            <td><a routerLink="factura/{{datos.id}}/{{datos.numero}}">{{datos.numero}}</a></td>
+            <td>{{datos.id_cliente}}</td>
+            <td>{{datos.fecha}}</td>
+        </tr>
+    </tbody>
+</table>
