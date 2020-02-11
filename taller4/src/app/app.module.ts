@@ -7,13 +7,15 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { OwnersComponent } from './componentes/owners/owners.component';
 import { VetsComponent } from './componentes/vets/vets.component';
 import {HttpClientModule} from '@angular/common/http';
+import { DetalleOwnerComponent } from './componentes/detalle-owner/detalle-owner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
     OwnersComponent,
-    VetsComponent
+    VetsComponent,
+    DetalleOwnerComponent
   ],
   imports: [
     BrowserModule,

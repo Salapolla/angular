@@ -10,11 +10,20 @@ import { Owner } from 'src/app/modelos/owner';
 export class OwnersComponent implements OnInit {
 
   public owners: Array<Owner>;
+  private valido="OK"
 
   constructor(private peticion:PeticionService) { 
 
   }
 
+
+  eliminar(id){
+
+    this.peticion.deleteOwner(id,this.valido).subscribe(datacos => {
+      this.owners=datacos;
+      console.log(this.owners);
+  });
+  }
   ngOnInit() {
     this.peticion.getOwners().subscribe(datacos => {
       this.owners=datacos;

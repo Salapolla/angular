@@ -17,4 +17,27 @@ export class PeticionService {
     });
     return this.http.post<any>(this.url,parametro);
   }
+  getVets(){
+    let parametro= JSON.stringify({
+      accion:"ListarVets"
+    });
+    return this.http.post<any>(this.url,parametro);
+  }
+
+  getOwner(id){
+    let parametro= JSON.stringify({
+      accion:"ObtenerOwnerId",
+      id:id
+    });
+    return this.http.post<any>(this.url,parametro);
+  }
+
+  deleteOwner(id,valido){
+    let parametro= JSON.stringify({
+      accion:"BorraOwner",
+      id:id,
+      listado:valido
+    });
+    return this.http.post<any>(this.url,parametro);
+  }
 }

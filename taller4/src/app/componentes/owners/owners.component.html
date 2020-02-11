@@ -1,1 +1,26 @@
 <h3>Owners:</h3>
+<table class="table">
+
+    <thead class="thead-dark">
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Telephone</th>
+        <th>Pets</th>
+        <th>Acciones</th>
+    </thead>
+    <tr *ngFor="let datos of owners">
+        <td>{{datos.id}}</td>
+        <td><a routerLink="owner/{{datos.id}}">{{datos.firstName}}</a></td>
+        <td>{{datos.lastName}}</td>
+        <td>{{datos.address}}</td>
+        <td>{{datos.city}}</td>
+        <td>{{datos.telephone}}</td>
+        <td>{{datos.pets}}</td>
+        <td><input type="button" (click)="eliminar({{datos.id}})" value="Delete">
+            <input type="button" value="Modify">
+        </td>
+    </tr>
+</table>

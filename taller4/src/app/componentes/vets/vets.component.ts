@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PeticionService} from 'src/app/servicios/peticion.service';
+import { Vet} from 'src/app/modelos/vet';
 
 @Component({
   selector: 'app-vets',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VetsComponent implements OnInit {
 
-  constructor() { }
+  public vets: Array<Vet>;
+
+  constructor(private peticion:PeticionService) { }
 
   ngOnInit() {
+    this.peticion.getVets().subscribe(datacos => {
+      this.vets=datacos;
+    });
   }
 
 }
