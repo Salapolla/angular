@@ -19,8 +19,9 @@
         <td>{{datos.city}}</td>
         <td>{{datos.telephone}}</td>
         <td>{{datos.pets}}</td>
-        <td><input type="button" (click)="eliminar({{datos.id}})" value="Delete">
-            <input type="button" value="Modify">
+        <td><input type="button" class="btn btn-danger mr-3" (click)="eliminar(datos.id)" value="Delete">
+            <input type="button" class="btn btn-primary" value="Modify">
         </td>
     </tr>
 </table>
+<input type="button" class="btn btn-primary" routerLink="anadirModificar" value="Añadir Owner">

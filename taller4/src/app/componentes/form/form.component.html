@@ -1,0 +1,22 @@
+<form>
+    <label for="firstName">Nombre:</label>
+    <input type="text" id="firstName" [(ngModel)]="owner.firstName" name="firstName" value="{{owner.firstName}}" >
+    <br />
+    <label for="lastName">Apellidos:</label>
+    <input type="text"  [(ngModel)]="owner.lastName" id="lastName" name="lastName" value="{{owner.lastName}}" />
+    <br />
+    <label for="address">Dirección:</label>
+    <input type="text" [(ngModel)]="owner.address" id="address" name="address" value="{{owner.address}}" />
+    <br />
+    <label for="city">Ciudad:</label>
+    <input type="text" [(ngModel)]="owner.city" id="city" name="city" value="{{owner.city}}" />
+    <br />
+    <label for="telephone">Teléfono:</label>
+    <input type="text" [(ngModel)]="owner.telephone" id="telephone" name="telephone" value="{{owner.telephone}}" />
+    <br />
+    <label for="pets">Mascotas:</label>
+    <input type="text" [(ngModel)]="owner.pets" id="pets" name="pets" value="{{owner.pets}}" />
+    <br />
+    <input class="btn btn-secondary"routerLink="/owners" (click)="anadir(owner.firstName, owner.lastName, owner.address, owner.city, owner.telephone, owner.pets)" type="button" value="ACEPTAR" />
+    <input class="btn btn-secondary" routerLink="" type="button" value="CANCELAR" />
+</form>

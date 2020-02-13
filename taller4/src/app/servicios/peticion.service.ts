@@ -32,6 +32,14 @@ export class PeticionService {
     return this.http.post<any>(this.url,parametro);
   }
 
+  anadirOwner(owner){
+    let parametro= JSON.stringify({
+      accion:"AnadeOwner",
+      owner:owner
+    });
+    return this.http.post<any>(this.url,parametro);
+  }
+
   deleteOwner(id,valido){
     let parametro= JSON.stringify({
       accion:"BorraOwner",
