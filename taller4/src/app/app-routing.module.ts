@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:"vets", component: VetsComponent},
   {path:"owners/owner/:id", component: DetalleOwnerComponent},
   {path:"owners/anadirModificar", component: FormComponent},
+  {path:"owners/anadirModificar/:id", component: FormComponent}
     
 ];
 

@@ -17,6 +17,6 @@
     <label for="pets">Mascotas:</label>
     <input type="text" [(ngModel)]="owner.pets" id="pets" name="pets" value="{{owner.pets}}" />
     <br />
-    <input class="btn btn-secondary"routerLink="/owners" (click)="anadir(owner.firstName, owner.lastName, owner.address, owner.city, owner.telephone, owner.pets)" type="button" value="ACEPTAR" />
+    <input class="btn btn-secondary"routerLink="/owners" (click)="anadir(owner.firstName, owner.lastName, owner.address, owner.city, owner.telephone, owner.pets)" type="button" value="{{anadirM}}" />
     <input class="btn btn-secondary" routerLink="" type="button" value="CANCELAR" />
 </form>

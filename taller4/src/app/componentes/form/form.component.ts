@@ -10,6 +10,8 @@ import { Owner } from 'src/app/modelos/owner';
 export class FormComponent implements OnInit {
 
   private owner:Owner;
+  private anadirM;
+  private idOwner;
 
 
   constructor(private peticion:PeticionService) {
