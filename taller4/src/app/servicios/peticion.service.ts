@@ -48,4 +48,11 @@ export class PeticionService {
     });
     return this.http.post<any>(this.url,parametro);
   }
+  modificarOwner(owner){
+    let parametro= JSON.stringify({
+      accion:"ModificaOwner",
+      owner:owner
+    });
+    return this.http.post<any>(this.url,parametro);
+  }
 }
